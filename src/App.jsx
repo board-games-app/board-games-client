@@ -6,6 +6,7 @@ import GameDetails from "./pages/GameDetails";
 import AddGamePage from "./pages/AddGamePage";
 import { useState } from "react";
 import Header from "./components/Header";
+import Footer from "./components/Footer";
 
 function App() {
 
@@ -18,6 +19,7 @@ function App() {
         <Route path="/all-games/:gameId" element={<GameDetails  />} />
         <Route path="/add-game" element={<AddGamePage />} />
       </Routes>
+      <Footer />
     </>
   )
 }
