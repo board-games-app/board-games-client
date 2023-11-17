@@ -1,0 +1,25 @@
+.Navbar {
+  display: inline-flex;
+  flex-direction: row;
+  justify-content: space-between;
+  position: relative;
+  align-content: flex-start;
+}
+
+.img_navbar {
+  width: 10%;
+  align-self: initial;
+  justify-self: left;
+}
+
+.Games-list {
+  padding: 4rem;
+  margin-top: 4rem;
+  justify-content: center;
+  text-decoration: none;
+}
+
+.Img-games-home {
+  width: 20%;
+  height: auto;
+}
