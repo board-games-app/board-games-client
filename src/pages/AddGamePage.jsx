@@ -25,7 +25,7 @@ function AddGamePage () {
             number_of_players: numberOfPlayers,
             age,
             year,
-            type_of_game : typeOfGame,
+            type_of_Game : typeOfGame,
             image,
             wiki_website : wikiWebsite
         };
@@ -102,7 +102,7 @@ function AddGamePage () {
                    Type of game
                     <input
                         type="text"
-                        name="type_of_game"
+                        name="type_of_Game"
                         className="inputField"
                         value={typeOfGame}
                         onChange={(e) => { setTypeOfGame(e.target.value); }}
