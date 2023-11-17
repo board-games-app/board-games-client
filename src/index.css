@@ -1,22 +1,24 @@
 .Navbar {
-  display: inline-flex;
-  flex-direction: row;
-  justify-content: space-between;
-  position: relative;
-  align-content: flex-start;
+  display: flex;
+  justify-content: space-between
 }
 
 .img_navbar {
   width: 10%;
-  align-self: initial;
-  justify-self: left;
+}
+
+.Header{
+  display: flex;
+  justify-content: space-between;
 }
 
 .Games-list {
-  padding: 4rem;
-  margin-top: 4rem;
+  padding: 2rem;
+  margin-top: 2rem;
   justify-content: center;
   text-decoration: none;
+  border: 1px solid grey;
+  
 }
 
 .Img-games-home {

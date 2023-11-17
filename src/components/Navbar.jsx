@@ -3,8 +3,8 @@ import { Link } from "react-router-dom";
 
 function Navbar() {
   return (
-    <div className="Navbar">
-      <nav>
+    <div >
+      <nav className="Navbar">
         <Link to="/">
           <img
             src="./src/assets/noun-home-1144.png"

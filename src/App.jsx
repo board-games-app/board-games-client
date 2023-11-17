@@ -5,12 +5,14 @@ import HomePage from "./pages/HomePage";
 import GameDetails from "./pages/GameDetails";
 import AddGamePage from "./pages/AddGamePage";
 import { useState } from "react";
+import Header from "./components/Header";
 
 function App() {
 
   return (
     <>
       <Navbar /> 
+      <Header />
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/all-games/:gameId" element={<GameDetails  />} />

@@ -1,14 +1,32 @@
-function Header (){
-    return (
-        <div>
-            <h1>All Games</h1>
-            <h1>Abstract Strategy</h1>
-            <h1>Mixed Genre</h1>
-            <h1>Party</h1>
-            <h1>Strategy</h1>
-            <h1>Word</h1>
-        </div>
-    )
+import { Link } from "react-router-dom";
+import AbstractStrategy from "./AbstractStrategy";
+import Strategy from "./Strategy";
+import Party from "./Party";
+import MixedGenre from "./MixedGenre";
+import Word from "./Word";
+function Header() {
+  return (
+    <div className="Header">
+      <Link to="/">
+        <h2>All Games</h2>
+      </Link>
+      <Link to="./AbstractStrategy">
+        <AbstractStrategy />
+      </Link>
+      <Link to="./MixedGenre">
+        <MixedGenre />
+      </Link>
+      <Link to="./Party">
+        <Party />
+      </Link>
+      <Link to="./Strategy">
+        <Strategy />
+      </Link>
+      <Link to="./Word">
+        <Word />
+      </Link>
+    </div>
+  );
 }
 
-export default Header
+export default Header;
