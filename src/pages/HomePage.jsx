@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
+import RandomGame from "../components/RandomGame";
 import GameDetails from "./GameDetails";
 import Header from "../components/Header";
 
@@ -20,6 +21,7 @@ function HomePage() {
 
   return (
     <div>
+      <div>
       <h1>Best Board Games Ever!</h1>
 
       {games.map((game) => {
@@ -35,6 +37,11 @@ function HomePage() {
         );
       })}
     </div>
+    <div>
+       <RandomGame />
+    </div>
+    </div>
+  
   );
 }
 
