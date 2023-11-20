@@ -1,28 +1,43 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
-import GameDetails from "./GameDetails";
-import Header from "../components/Header";
 
 function HomePage() {
+  const API_URL = "https://board-games.adaptable.app/games";
   const [games, setGames] = useState([]);
+  const [filteredGames, setFilteredGames] = useState([]);
+  const [query, setQuery] = useState("");
 
   useEffect(() => {
     axios
-      .get("https://board-games.adaptable.app/games")
+      .get(`${API_URL}`)
       .then((response) => {
         setGames(response.data);
+        setFilteredGames(response.data);
       })
       .catch((error) => {
         console.log(error);
       });
   }, []);
 
+  useEffect(() => {
+    const filtered = games.filter((game) => {
+      return game.name.toLowerCase().includes(query.toLowerCase());
+    });
+    setFilteredGames(filtered);
+  }, [games, query]);
+
   return (
     <div>
       <h1>Best Board Games Ever!</h1>
+      <div>
+        <input
+          placeholder="Search 4 a game"
+          onChange={(event) => setQuery(event.target.value)}
+        />
+      </div>
 
-      {games.map((game) => {
+      {filteredGames.map((game) => {
         return (
           <Link to={`./all-games/${game.id}`} key={game.id}>
             <div className="Games-list">
