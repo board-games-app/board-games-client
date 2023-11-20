@@ -11,19 +11,19 @@ function Header() {
         <h2>All Games</h2>
       </Link>
       <Link to="./AbstractStrategy">
-        <AbstractStrategy />
+        <h2>Abstract Strategy</h2>
       </Link>
       <Link to="./MixedGenre">
-        <MixedGenre />
+        <h2>Mixed Genre</h2>
       </Link>
       <Link to="./Party">
-        <Party />
+      <h2>Party</h2>
       </Link>
       <Link to="./Strategy">
-        <Strategy />
+      <h2>Strategy</h2>
       </Link>
       <Link to="./Word">
-        <Word />
+      <h2>Word</h2>
       </Link>
     </div>
   );
