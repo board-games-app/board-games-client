@@ -15,6 +15,7 @@ import MixedGenre from "./components/MixedGenre";
 import Party from "./components/Party";
 import Strategy from "./components/Strategy";
 import Word from "./components/Word";
+import TestYourself from "./components/TestYourself";
 
 function App() {
   
@@ -28,6 +29,7 @@ function App() {
         <Route path="/all-games/:gameId" element={<GameDetails />} />
         <Route path="/add-game" element={<AddGamePage />} />
         <Route path="/edit/:gameId" element={<EditGame />}/>
+        <Route path="/test-yourself" element={<TestYourself />}/>
         <Route path="random-game" element={<RandomGame />} />
         <Route path="/AbstractStrategy" element={<AbstractStrategy />} />
         <Route path="/MixedGenre" element={<MixedGenre />} />
