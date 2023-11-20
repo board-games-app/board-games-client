@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom"
 import axios from "axios"
 import { Link } from "react-router-dom"
 
-function GameDetails (props) {
+function GameDetails () {
     const [game, setGame] = useState({})
     const {gameId} = useParams()
 
@@ -22,6 +22,7 @@ function GameDetails (props) {
     useEffect(() =>{
         getGame()
     }, [gameId])
+
    
 
     return (
@@ -34,6 +35,7 @@ function GameDetails (props) {
             <p>{game.age}</p>
             <p>Type of game: {game.type_of_Game}</p>
             <Link to={game.wiki_website} target="_blank">Wiki Link</Link>
+            
         </div>
     )
 }
