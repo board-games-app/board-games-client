@@ -8,8 +8,7 @@ import Header from "./components/Header";
 import Footer from "./components/Footer";
 import RandomGame from "./components/RandomGame";
 import EditGame from "./components/Edit";
-
-
+import Dice from "./components/Dice";
 import AbstractStrategy from "./components/AbstractStrategy";
 import MixedGenre from "./components/MixedGenre";
 import Party from "./components/Party";
@@ -18,7 +17,6 @@ import Word from "./components/Word";
 
 function App() {
   
-
   return (
     <>
       <Navbar /> 
@@ -28,6 +26,7 @@ function App() {
         <Route path="/all-games/:gameId" element={<GameDetails />} />
         <Route path="/add-game" element={<AddGamePage />} />
         <Route path="/edit/:gameId" element={<EditGame />}/>
+        <Route path="/dice" element={<Dice />}/>
         <Route path="random-game" element={<RandomGame />} />
         <Route path="/AbstractStrategy" element={<AbstractStrategy />} />
         <Route path="/MixedGenre" element={<MixedGenre />} />

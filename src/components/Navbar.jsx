@@ -13,6 +13,9 @@ function Navbar() {
           />
         </Link>
 
+        <Link to="dice">
+          <h3>Throw the dice!</h3>
+        </Link>
 
         <Link to="/add-game">
           <h3>Add a Game</h3>
