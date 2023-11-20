@@ -1,6 +1,9 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
+import RandomGame from "../components/RandomGame";
+import GameDetails from "./GameDetails";
+import Header from "../components/Header";
 
 function HomePage() {
   const API_URL = "https://board-games.adaptable.app/games";
@@ -29,6 +32,7 @@ function HomePage() {
 
   return (
     <div>
+      <div>
       <h1>Best Board Games Ever!</h1>
       <div>
         <input
@@ -50,6 +54,11 @@ function HomePage() {
         );
       })}
     </div>
+    <div>
+       <RandomGame />
+    </div>
+    </div>
+  
   );
 }
 

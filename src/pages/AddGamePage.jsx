@@ -25,7 +25,7 @@ function AddGamePage () {
             number_of_players: numberOfPlayers,
             age,
             year,
-            type_of_Game : typeOfGame,
+            type_of_Game : formatSelectedTypes(typeOfGame),
             image,
             wiki_website : wikiWebsite
         };
@@ -39,7 +39,20 @@ function AddGamePage () {
             console.log(error);
         });
 };
-    
+
+const handleTypeOfGameChange = (e) => {
+    const { value, checked } = e.target;
+    if (checked) {
+        setTypeOfGame(prevTypes => [...prevTypes, value]);
+    } else {
+        setTypeOfGame(prevTypes => prevTypes.filter(type => type !== value));
+    }
+};
+
+const formatSelectedTypes = (types) => {
+    return types.join(', ');
+};
+
     return (
         <div>
         <div>
@@ -100,13 +113,53 @@ function AddGamePage () {
                 </label>
                 <label>
                    Type of game
-                    <input
-                        type="text"
-                        name="type_of_Game"
-                        className="inputField"
-                        value={typeOfGame}
-                        onChange={(e) => { setTypeOfGame(e.target.value); }}
-                    />
+                   <div className="checkbox-options">
+                    <label>
+                        <input
+                            type="checkbox"
+                            value="Abstract Strategy"
+                            checked={typeOfGame.includes('Abstract Strategy')}
+                            onChange={handleTypeOfGameChange}
+                        />
+                        Abstract Strategy
+                    </label>
+                    <label>
+                        <input
+                            type="checkbox"
+                            value="Mixed Genre"
+                            checked={typeOfGame.includes('Mixed Genre')}
+                            onChange={handleTypeOfGameChange}
+                        />
+                        Mixed Genre
+                    </label>
+                    <label>
+                        <input
+                            type="checkbox"
+                            value="Party"
+                            checked={typeOfGame.includes('Party')}
+                            onChange={handleTypeOfGameChange}
+                        />
+                        Party
+                    </label>
+                    <label>
+                        <input
+                            type="checkbox"
+                            value="Strategy"
+                            checked={typeOfGame.includes('Strategy')}
+                            onChange={handleTypeOfGameChange}
+                        />
+                        Strategy
+                    </label>
+                    <label>
+                        <input
+                            type="checkbox"
+                            value="Word"
+                            checked={typeOfGame.includes('Word')}
+                            onChange={handleTypeOfGameChange}
+                        />
+                        Word
+                    </label>
+                </div>
                 </label>
                 <label>
                    Image link
