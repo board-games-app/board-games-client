@@ -20,6 +20,10 @@ function Navbar() {
         <Link to="/add-game">
           <h3>Add a Game</h3>
         </Link>
+
+        <Link to="/test-yourself">
+          <h3>Test Yourself</h3>
+        </Link>
       </nav>
     </div>
   );
