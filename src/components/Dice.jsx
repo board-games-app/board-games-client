@@ -20,7 +20,7 @@ function Dice() {
     }
 
     return (
-        <div>
+        <div className="dice-container">
             <div>
                 {result !== null && (
                     <img
@@ -30,9 +30,10 @@ function Dice() {
                     />
                 )}
             </div>
-            <button onClick={diceThrow} disabled={rolling} class="btn">
+            <button onClick={diceThrow} disabled={rolling} className ="btn" style={{ margin: '5px' }}>
                 {rolling ? 'Rolling...' : 'Roll'}
             </button>
+            
         </div>
     );
 }

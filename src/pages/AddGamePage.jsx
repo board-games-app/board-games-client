@@ -56,7 +56,7 @@ const formatSelectedTypes = (types) => {
     return (
         <div>
         <div>
-            <h2>This is the games details page</h2>
+            <h2>Feel free to add a new game!</h2>
         </div>
 
         <form className="formContainer" onSubmit={handleSubmit}>
@@ -181,7 +181,7 @@ const formatSelectedTypes = (types) => {
                         onChange={(e) => { setWikiWebsite(e.target.value); }}
                     />
                 </label>
-                <button type="submit" className="submitBtn">
+                <button type="submit" className="btn">
                     Add Game
                 </button>
             </div>

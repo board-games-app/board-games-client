@@ -12,7 +12,8 @@ nav h3 {
 }
 
 .img_navbar {
-  width: 10%;
+  width: 5%;
+  display: block;
 }
 
 .Header{
@@ -26,7 +27,6 @@ nav h3 {
   justify-content: center;
   text-decoration: none;
   border: 1px solid grey;
-  
 }
 
 .Img-games-home {
@@ -34,7 +34,48 @@ nav h3 {
   height: auto;
 }
 
-.dice-image {
-  width: 5%;
-  height: auto;
+.dice-container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+
 }
+
+.dice-image {
+  width: 15%;
+  height: auto;
+  margin-top: 5%;
+  margin-bottom: 1%;
+
+  display: inline-flex;
+}
+
+.formContainer {
+  max-width: 400px;
+  margin: 20px auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+.labelForm {
+  display: inline-flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+}
+
+.labelForm label {
+  font-size: 16px;
+  margin-bottom: 5px;
+}
+
+.inputField {
+  padding: 8px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+

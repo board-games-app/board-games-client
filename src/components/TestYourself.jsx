@@ -157,7 +157,7 @@ function TestYourself() {
         <label>Word Game</label>
 
         <br />
-        <button type="submit">Get Suggestion!</button>
+        <button type="submit" className="btn">Get Suggestion!</button>
       </form>
 
       <ul className="listTest">
