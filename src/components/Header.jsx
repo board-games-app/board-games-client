@@ -1,30 +1,29 @@
 import { Link } from "react-router-dom";
-import AbstractStrategy from "./AbstractStrategy";
-import Strategy from "./Strategy";
-import Party from "./Party";
-import MixedGenre from "./MixedGenre";
-import Word from "./Word";
 function Header() {
+
+ 
   return (
-    <div className="Header">
-      <Link to="/">
-        <h2>All Games</h2>
+    <div className="Header menu menu-vertical lg:menu-horizontal bg-base-200 rounded-box ">
+      
+      <Link to="/" style={{ textDecoration: 'none' }} className="menu-link">
+        <h2 >All Games</h2>
       </Link>
-      <Link to="./AbstractStrategy">
-        <h2>Abstract Strategy</h2>
+      <Link to="./AbstractStrategy" style={{ textDecoration: 'none' }} className="menu-link">
+        <h2 >Abstract Strategy</h2>
       </Link>
-      <Link to="./MixedGenre">
-        <h2>Mixed Genre</h2>
+      <Link to="./MixedGenre" style={{ textDecoration: 'none' }} className="menu-link">
+        <h2 >Mixed Genre</h2>
       </Link>
-      <Link to="./Party">
-      <h2>Party</h2>
+      <Link to="./Party" style={{ textDecoration: 'none' }} className="menu-link">
+      <h2 >Party</h2>
       </Link>
-      <Link to="./Strategy">
-      <h2>Strategy</h2>
+      <Link to="./Strategy" style={{ textDecoration: 'none' }} className="menu-link">
+      <h2 >Strategy</h2>
       </Link>
-      <Link to="./Word">
-      <h2>Word</h2>
+      <Link to="./Word" style={{ textDecoration: 'none' }} className="menu-link">
+      <h2 >Word</h2>
       </Link>
+      
     </div>
   );
 }

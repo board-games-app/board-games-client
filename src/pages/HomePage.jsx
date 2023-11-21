@@ -2,8 +2,6 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import RandomGame from "../components/RandomGame";
-import GameDetails from "./GameDetails";
-import Header from "../components/Header";
 
 function HomePage() {
   const API_URL = "https://board-games.adaptable.app/games";
@@ -26,7 +24,10 @@ function HomePage() {
 
   useEffect(() => {
     const filtered = games.filter((game) => {
-       return game.name && game.name.toLowerCase().includes((query || '').toLowerCase());
+      return (
+        game.name &&
+        game.name.toLowerCase().includes((query || "").toLowerCase())
+      );
     });
     setFilteredGames(filtered);
   }, [games, query]);
@@ -43,11 +44,9 @@ function HomePage() {
       });
   };
 
-
   return (
     <div>
       <div>
-        <h1>Best Board Games Ever!</h1>
         <div>
           <input
             placeholder="Search 4 a game"
@@ -55,33 +54,39 @@ function HomePage() {
             className="input input-bordered w-full max-w-xs"
           />
         </div>
-
-        {filteredGames.map((game) => {
-          return (
-            <div  key={game.id}>
-              <Link to={`./all-games/${game.id}`} >
-                <div className="card w-96 bg-base-100 shadow-xl" >
-                <h3 className="card-title">{game.name}</h3>
-                <img className="Img-games-home" src={game.image} alt="" />
-                <p className="card-actions justify-end">Type of game: {game.type_of_Game}</p>
-                <p className="card-actions justify-end">Year created: {game.year}</p>
+        <section className="Cointainer">
+          {filteredGames.map((game) => {
+            return (
+              <div key={game.id} className="card w-96 bg-base-100 shadow-xl">
+                <div className="card-body">
+                  <Link to={`./all-games/${game.id}`}>
+                    <div className="card-body items-center text-center">
+                      <h3 className="card-title">{game.name}</h3>
+                      <img className="rounded" src={game.image} />
+                      <p className="card-actions justify-end">
+                        Type of game: {game.type_of_Game}
+                      </p>
+                      <p className="card-actions justify-end">
+                        Year created: {game.year}
+                      </p>
+                    </div>
+                  </Link>
+                  <button
+                    className="btn btn-xs sm:btn-sm md:btn-md btn-wide "
+                    onClick={() => {
+                      deleteGame(game);
+                    }}
+                  >
+                    Delete
+                  </button>
+                  <Link to={`/edit/${game.id}`}>
+                    <button className="btn btn-xs sm:btn-sm md:btn-md btn-wide btn-neutral">Edit</button>
+                  </Link>
                 </div>
-              </Link>
-              <button className="btn btn-primary"
-                onClick={() => {
-                  deleteGame(game);
-                }}
-              >
-                Delete
-              </button >
-              <Link to={`/edit/${game.id}`}>  
-              <button className="btn btn-primary">
-                Edit
-              </button>
-              </Link> 
-            </div>
-          );
-        })}
+              </div>
+            );
+          })}
+        </section>
       </div>
       <div>
         <RandomGame />
