@@ -2,19 +2,19 @@ import { Link } from "react-router-dom";
 
 function Navbar() {
   return (
-    <div className="Navbar">
-        <nav>
+    <nav >
+    <div className ="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4 m-0 bg-gray-800 ms-0">
           <Link to="/">
-            <img
+            <img className="img_navbar"
               src="./src/assets/noun-home-1144.png"
               alt="home_icon"
-              className="img_navbar"
             />
           </Link>
-          <div >
-            <ul >
+
+          <div className="hidden w-full md:block md:w-auto" id="navbar-solid-bg">
+          <ul className="flex flex-col font-medium mt-4 rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-transparent dark:bg-gray-800 md:dark:bg-transparent dark:border-gray-700">
               <Link to="dice">
-                <h3 >Throw the dice!</h3>
+                <h3 class="text-slate-50">Throw the dice!</h3>
               </Link>
 
               <Link to="/add-game">
@@ -26,9 +26,8 @@ function Navbar() {
               </Link>
             </ul>
           </div>
-        </nav>
       </div>
-   
+      </nav>
   );
 }
 
