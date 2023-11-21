@@ -30,7 +30,7 @@ function Dice() {
                     />
                 )}
             </div>
-            <button onClick={diceThrow} disabled={rolling}>
+            <button onClick={diceThrow} disabled={rolling} class="btn">
                 {rolling ? 'Rolling...' : 'Roll'}
             </button>
         </div>

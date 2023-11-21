@@ -30,7 +30,7 @@ function Word () {
     <h2>Word</h2>
     {wordGames.map((game) => (
         <Link to={`./game-details/${game.id}`} key={game.id}>
-        <div className="Games-list">
+        <div lassName="card w-96 bg-base-100 shadow-xl">
           <h3>{game.name}</h3>
           <img className="Img-games-home" src={game.image} alt="" />
           <p>Type of game: {game.type_of_Game}</p>
