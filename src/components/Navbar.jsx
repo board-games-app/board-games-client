@@ -19,11 +19,11 @@ function Navbar() {
               </Link>
 
               <Link to="/add-game">
-                <h3 >Add a Game</h3>
+                <h3 className="text-slate-50" >Add a Game</h3>
               </Link>
 
               <Link to="/test-yourself">
-                <h3 >Can't decide?</h3>
+                <h3 className="text-slate-50">Can't decide?</h3>
               </Link>
             </ul>
           </div>

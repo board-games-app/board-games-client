@@ -52,7 +52,8 @@ function TestYourself() {
   return (
     <div className="short-page">
       <div>
-        <h2 className="test_h2">
+        <br />
+        <h2 className="title_h2">
           Answer these questions to see our suggestions to your next game date
         </h2>
         <form className="formTest" onSubmit={handleSubmit}>

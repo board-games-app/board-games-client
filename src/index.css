@@ -17,6 +17,8 @@ img {
   display: inline-block;
 }
 
+
+
 nav h3 {
   color: whitesmoke;
 }
@@ -26,16 +28,6 @@ nav h3 {
   width: 5%;
   display: block;
 }
-
-.Header {
-  display: flex;
-  justify-content: space-evenly;
-  margin: 1rem;
-  height: 4rem;
-  width: 90vw;
-  align-items: center;
-}
-
 
 .menu-link:hover {
   background-color: rgba(0, 0, 0, 0.1);
@@ -100,8 +92,8 @@ nav h3 {
 }
 
 .card {
-  margin-left: 3rem;
-  margin-top: 2rem
+  margin: 2rem;
+ 
 }
 
 .Cointainer {
@@ -109,6 +101,14 @@ nav h3 {
   grid-template-columns: repeat(3, 1fr);
   justify-content: center;
   align-content: center;
+  gap: 20px;
+
+  @media (max-width: 375px) {
+    grid-template-columns: 1fr; 
+  }
+  @media (max-width: 720px) {
+    grid-template-columns: 1fr; 
+  }
 }
 
 .Container {

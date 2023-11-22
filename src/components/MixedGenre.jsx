@@ -30,7 +30,7 @@ function MixedGenre() {
   return (
     <div className="short-page">
       <div className="card-body">
-        <h2>Mixed Genre</h2>
+        <h2 className="title_h2">Mixed Genre</h2>
         <div className="Cointainer">
           {mixedGenreGames.map((game) => (
             <Link to={`./game-details/${game.id}`} key={game.id}>

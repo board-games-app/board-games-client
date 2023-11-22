@@ -56,7 +56,8 @@ function AddGamePage() {
     return (
         <div>
             <div>
-                <h2>Feel free to add a new game!</h2>
+                <br />
+                <h2 className="title_h2">Feel free to add a new game!</h2>
             </div>
 
             <form className="formContainer" onSubmit={handleSubmit}>

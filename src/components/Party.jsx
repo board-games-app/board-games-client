@@ -30,7 +30,7 @@ function Party() {
   return (
     <div className="short-page">
       <div className="card-body">
-        <h2>Party</h2>
+        <h2 className="title_h2">Party</h2>
         <div className="Cointainer">
           {partyGames.map((game) => (
             <Link

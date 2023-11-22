@@ -28,7 +28,7 @@ function Word() {
   return (
     <div className="short-page">
     <div  className="card-body">
-      <h2>Word</h2>
+      <h2 className="title_h2">Word</h2>
       <div className="Cointainer">
         {wordGames.map((game) => (
           <Link
