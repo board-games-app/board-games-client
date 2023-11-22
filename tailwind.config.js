@@ -1,6 +1,8 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ["./src/**/*.{html,js,jsx}"],
+  content: ["./src/**/*.{html,js,jsx}", 'node_modules/daisyui/dist/**/*.js',
+  'node_modules/react-daisyui/dist/**/*.js'],
+  plugins: [require ("daisyui")],
   safelist: ["./src/components/Navbar.jsx"],
  
   daisyui: {
@@ -13,5 +15,5 @@ module.exports = {
     logs: true, // Shows info about daisyUI version and used config in the console when building your CSS
     themeRoot: ":root", // The element that receives theme color CSS variables
   },
-  plugins: [require ("daisyui")],
+  
 }
