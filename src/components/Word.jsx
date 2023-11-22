@@ -16,13 +16,20 @@ function Word() {
       .get(API_URL)
       .then((response) => {
         const games = response.data;
-        const wordGames = games.filter((game) => game.type_of_Game === "Word Game");
+        const wordGames = games.filter((game) => {
+          const categoriesArray = separateCategories(game.type_of_Game);
+          return categoriesArray.includes("Word Game");
+        });
         setWordGames(wordGames);
       })
       .catch((error) => {
         console.log("No game data found in the API response.");
         console.error(error);
       });
+  };
+
+  const separateCategories = (typeOfGame) => {
+    return typeOfGame.split(', ');
   };
 
   return (

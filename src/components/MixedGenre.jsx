@@ -16,15 +16,20 @@ function MixedGenre() {
       .get(API_URL)
       .then((response) => {
         const games = response.data;
-        const mixedGenreGames = games.filter(
-          (game) => game.type_of_Game === "Mixed Genre"
-        );
+        const mixedGenreGames = games.filter((game) => {
+          const categoriesArray = separateCategories(game.type_of_Game);
+          return categoriesArray.includes("Mixed Genre");
+        });
         setMixedGenreGames(mixedGenreGames);
       })
       .catch((error) => {
         console.log("No game data found in the API response.");
         console.error(error);
       });
+  };
+
+  const separateCategories = (typeOfGame) => {
+    return typeOfGame.split(', ');
   };
 
   return (

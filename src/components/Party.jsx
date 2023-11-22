@@ -16,15 +16,20 @@ function Party() {
       .get(API_URL)
       .then((response) => {
         const games = response.data;
-        const partyGames = games.filter(
-          (game) => game.type_of_Game === "Party"
-        );
+        const partyGames = games.filter((game) => {
+          const categoriesArray = separateCategories(game.type_of_Game);
+          return categoriesArray.includes("Party");
+        });
         setPartyGames(partyGames);
       })
       .catch((error) => {
         console.log("No game data found in the API response.");
         console.error(error);
       });
+  };
+
+  const separateCategories = (typeOfGame) => {
+    return typeOfGame.split(', ');
   };
 
   return (

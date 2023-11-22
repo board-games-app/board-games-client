@@ -16,15 +16,20 @@ function Strategy() {
       .get(API_URL)
       .then((response) => {
         const games = response.data;
-        const strategyGames = games.filter(
-          (game) => game.type_of_Game === "Strategy"
-        );
+        const strategyGames = games.filter((game) => {
+          const categoriesArray = separateCategories(game.type_of_Game);
+          return categoriesArray.includes("Strategy");
+        });
         setStrategyGames(strategyGames);
       })
       .catch((error) => {
         console.log("No game data found in the API response.");
         console.error(error);
       });
+  };
+
+  const separateCategories = (typeOfGame) => {
+    return typeOfGame.split(', ');
   };
 
   return (
@@ -41,7 +46,13 @@ function Strategy() {
               <div className="card-body items-center text-center">
                 <h3 className="card-title">{game.name}</h3>
                 <img className="rounded-xl" src={game.image} alt="" />
-                <p>Type of game: {game.type_of_Game}</p>
+                <p>Type of game:
+                <div>
+                  {separateCategories(game.type_of_Game).map((category, index) => (
+                    <span key={index}>{category}</span>
+                  ))}
+                </div>
+                </p>
                 <p>Year created: {game.year}</p>
               </div>
             </Link>

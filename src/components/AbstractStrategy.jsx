@@ -16,15 +16,20 @@ function AbstractStrategy() {
       .get(API_URL)
       .then((response) => {
         const games = response.data;
-        const abstractStrategyGames = games.filter(
-          (game) => game.type_of_Game === "Abstract Strategy"
-        );
+        const abstractStrategyGames = games.filter((game) => {
+          const categoriesArray = separateCategories(game.type_of_Game);
+          return categoriesArray.includes("Abstract Strategy");
+        });
         setAbstractStrategyGames(abstractStrategyGames);
       })
       .catch((error) => {
         console.log("No game data found in the API response.");
         console.error(error);
       });
+  };
+
+  const separateCategories = (typeOfGame) => {
+    return typeOfGame.split(', ');
   };
 
   return (

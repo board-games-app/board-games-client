@@ -170,8 +170,8 @@ function AddGamePage() {
                             <div className="checkbox-options">
                                 <input
                                     type="checkbox"
-                                    value="Word"
-                                    checked={selectedCategories.includes('Word')}
+                                    value="Word Game"
+                                    checked={selectedCategories.includes('Word Game')}
                                     onChange={handleTypeOfGameChange}
                                     className="checkbox"
                                 />
