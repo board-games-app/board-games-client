@@ -2,7 +2,9 @@ import { Link } from "react-router-dom";
 
 function Footer() {
     return (
-        <p>© 2023 Board Games App</p>
+        <footer className="footer footer-center p-4 bg-base-300 text-neutral-content">
+            <p>Copyright © 2023 Board Games App - All right reserved</p>
+        </footer>
     )
 }
 

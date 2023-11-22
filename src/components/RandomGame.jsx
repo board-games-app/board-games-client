@@ -40,7 +40,7 @@ function RandomGame() {
                 <h2>Pick a random game!</h2>
             </div>
 
-            <button onClick={handleButtonClick}>Pick it here!</button>
+            <button className="btn" onClick={handleButtonClick}>Pick it here!</button>
 
             {showGame && (
                 <div>

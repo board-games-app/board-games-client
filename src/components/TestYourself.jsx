@@ -30,6 +30,7 @@ function TestYourself() {
   };
 
   const handleRadioChange = (e) => {
+    console.log(e.target);
     const { name, value } = e.target;
     setAnswers((prevAnswers) => ({ ...prevAnswers, [name]: value }));
   };
@@ -43,137 +44,186 @@ function TestYourself() {
     return gameSuggestions.filter(
       (game) =>
         String(game.number_of_players).toLowerCase() ===
-          lowercaseUserAnswers.number_of_players &&
+        lowercaseUserAnswers.number_of_players &&
         game.type_of_Game.toLowerCase() === lowercaseUserAnswers.type_of_Game
     );
   };
 
   return (
-    <div>
-      <h2>
-        Answer these questions to see our suggestions to your next game date
-      </h2>
-      <form className="formTest" onSubmit={handleSubmit}>
-        <br />
-        <label>How many players are in your game?</label>
-        <input
-          type="radio"
-          id="Two"
-          name="number_of_players"
-          value={2}
-          onChange={handleRadioChange}
-        />
-        <label>2</label>
-        <input
-          type="radio"
-          id=""
-          name="number_of_players"
-          value="2-8"
-          onChange={handleRadioChange}
-        />
-        <label>2-8</label>
-        <input
-          type="radio"
-          id=""
-          name="number_of_players"
-          value="2-4"
-          onChange={handleRadioChange}
-        />
-        <label>2-4</label>
-        <input
-          type="radio"
-          id=""
-          name="number_of_players"
-          value="3-6"
-          onChange={handleRadioChange}
-        />
-        <label>3-6</label>
-        <input
-          type="radio"
-          id=""
-          name="number_of_players"
-          value="2-6"
-          onChange={handleRadioChange}
-        />
-        <label>2-6</label>
-        <input
-          type="radio"
-          id=""
-          name="number_of_players"
-          value="2 teams"
-          onChange={handleRadioChange}
-        />
-        <label>2 teams</label>
-        <input
-          type="radio"
-          id=""
-          name="number_of_players"
-          value="3-4"
-          onChange={handleRadioChange}
-        />
-        <label>3-4</label>
-        <input
-          type="radio"
-          id=""
-          name="number_of_players"
-          value={4}
-          onChange={handleRadioChange}
-        />
-        <label>4</label>
+    <div className="short-page">
+      <div>
+        <h2>
+          Answer these questions to see our suggestions to your next game date
+        </h2>
+        <form className="formTest" onSubmit={handleSubmit}>
+          <br />
+          <div className="labelTest">
+            <label><p>How many players are in your game?</p>
+              <div className="checkbox-container">
+                <div className="checkbox-options">
+                  <input
+                    type="radio"
+                    id="Two"
+                    name="number_of_players"
+                    value={2}
+                    onChange={handleRadioChange}
+                    className="checkbox"
+                  />
+                  <label >2</label>
+                </div>
+                <div className="checkbox-options">
+                  <input
+                    type="radio"
+                    id=""
+                    name="number_of_players"
+                    value="2-4"
+                    onChange={handleRadioChange}
+                    className="checkbox"
+                  />
+                  <label>2-4</label>
+                </div>
+                <div className="checkbox-options">
+                  <input
+                    type="radio"
+                    id=""
+                    name="number_of_players"
+                    value="2-6"
+                    onChange={handleRadioChange}
+                    className="checkbox"
+                  />
+                  <label>2-6</label>
+                </div>
+                <div className="checkbox-options">
+                  <input
+                    type="radio"
+                    id=""
+                    name="number_of_players"
+                    value="2-8"
+                    onChange={handleRadioChange}
+                    className="checkbox"
+                  />
+                  <label>2-8</label>
+                </div>
+                <div className="checkbox-options">
+                  <input
+                    type="radio"
+                    id=""
+                    name="number_of_players"
+                    value="3-4"
+                    onChange={handleRadioChange}
+                    className="checkbox"
+                  />
+                  <label>3-4</label>
+                </div>
+                <div className="checkbox-options">
+                  <input
+                    type="radio"
+                    id=""
+                    name="number_of_players"
+                    value="3-6"
+                    onChange={handleRadioChange}
+                    className="checkbox"
+                  />
+                  <label>3-6</label>
+                </div>
+                <div className="checkbox-options">
+                  <input
+                    type="radio"
+                    id=""
+                    name="number_of_players"
+                    value={4}
+                    onChange={handleRadioChange}
+                    className="checkbox"
+                  />
+                  <label>4</label>
+                </div>
+                <div className="checkbox-options">
+                  <input
+                    type="radio"
+                    id=""
+                    name="number_of_players"
+                    value="2 teams"
+                    onChange={handleRadioChange}
+                    className="checkbox"
+                  />
+                  <label>2 teams</label>
+                </div>
+              </div>
+            </label>
 
-        <br />
-        <label>Which of the following types of games aligns with you?</label>
-        <input
-          type="radio"
-          id="Strategy"
-          name="type_of_Game"
-          value="Strategy"
-          onChange={handleRadioChange}
-        />
-        <label>Strategy</label>
-        <input
-          type="radio"
-          id="Abstract Strategy"
-          name="type_of_Game"
-          value="Abstract Strategy"
-          onChange={handleRadioChange}
-        />
-        <label>Abstract Strategy</label>
-        <input
-          type="radio"
-          id="Party"
-          name="type_of_Game"
-          value="Party"
-          onChange={handleRadioChange}
-        />
-        <label>Party</label>
-        <input
-          type="radio"
-          id="Word"
-          name="type_of_Game"
-          value="Word Game"
-          onChange={handleRadioChange}
-        />
-        <label>Word Game</label>
+            <br />
+            <label><p>Which of the following types of games aligns with you?</p>
+              <div className="checkbox-container">
+                <div className="checkbox-options">
+                  <input
+                    type="radio"
+                    id="Abstract Strategy"
+                    name="type_of_Game"
+                    value="Abstract Strategy"
+                    onChange={handleRadioChange}
+                    className="checkbox"
+                  />
+                  <label>Abstract Strategy</label>
+                </div>
+                <div className="checkbox-options">
+                  <input
+                    type="radio"
+                    id="Party"
+                    name="type_of_Game"
+                    value="Party"
+                    onChange={handleRadioChange}
+                    className="checkbox"
+                  />
+                  <label>Party</label>
+                </div>
+                <div className="checkbox-options">
+                  <input
+                    type="radio"
+                    id="Strategy"
+                    name="type_of_Game"
+                    value="Strategy"
+                    onChange={handleRadioChange}
+                    className="checkbox"
+                  />
+                  <label>Strategy</label>
+                </div>
+                <div className="checkbox-options">
+                  <input
+                    type="radio"
+                    id="Word"
+                    name="type_of_Game"
+                    value="Word Game"
+                    onChange={handleRadioChange}
+                    className="checkbox"
+                  />
+                  <label>Word Game</label>
+                </div>
+              </div>
+            </label>
+            <br />
+            <button type="submit" className="btn">Get Suggestion!</button>
+          </div>
+        </form>
 
-        <br />
-        <button type="submit" className="btn">Get Suggestion!</button>
-      </form>
+        <section className="Container">
+        <ul className="listTest">
+          {filteredGameSuggestions.map((game) => (
 
-      <ul className="listTest">
-        {filteredGameSuggestions.map((game) => (
-          
-            <Link to={`/all-games/${game.id}`} key={game.id}>
-            <div >
-              <h3>{game.name}</h3>
-              <img className="Img-games-home" src={game.image} alt="" />
-              <p>Type of game: {game.type_of_Game}</p>
-              <p>Year created: {game.year}</p>
+            <Link to={`/all-games/${game.id}`} key={game.id} className="card w-96 bg-base-100 shadow-xl">
+              <div className="card-body" >
+                <div className="card-body items-center text-center">
+                <h3 className="card-title">{game.name}</h3>
+                <img className="rounded" src={game.image} alt="" />
+                <p className="card-actions justify-end">Type of game: {game.type_of_Game}</p>
+                <p className="card-actions justify-end">Year created: {game.year}</p>
+              </div>
               </div>
             </Link>
-          
-        ))}
-      </ul>
+
+          ))}
+        </ul>
+        </section>
+      </div>
     </div>
   );
 }

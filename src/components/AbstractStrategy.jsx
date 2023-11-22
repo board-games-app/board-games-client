@@ -28,25 +28,27 @@ function AbstractStrategy() {
   };
 
   return (
-    <div  className="card-body">
-      <h2>Abstract Strategy</h2>
-      <div className="Cointainer">
-        {abstractStrategyGames.map((game) => (
-          <Link
-            to={`./game-details/${game.id}`}
-            key={game.id}
-            className="card w-96 bg-base-100 shadow-xl"
-          >
-            <div className="card-body items-center text-center">
-              <h3 className="card-title">{game.name}</h3>
-              <img className="rounded-xl" src={game.image} alt="" />
-              <p>Type of game: {game.type_of_Game}</p>
-              <p>Year created: {game.year}</p>
-            </div>
-          </Link>
-        ))}
-      </div>
-    </ div>
+    <div className="short-page">
+      <div className="card-body">
+        <h2>Abstract Strategy</h2>
+        <div className="Cointainer">
+          {abstractStrategyGames.map((game) => (
+            <Link
+              to={`./game-details/${game.id}`}
+              key={game.id}
+              className="card w-96 bg-base-100 shadow-xl"
+            >
+              <div className="card-body items-center text-center">
+                <h3 className="card-title">{game.name}</h3>
+                <img className="rounded-xl" src={game.image} alt="" />
+                <p>Type of game: {game.type_of_Game}</p>
+                <p>Year created: {game.year}</p>
+              </div>
+            </Link>
+          ))}
+        </div>
+      </ div>
+    </div>
   );
 }
 

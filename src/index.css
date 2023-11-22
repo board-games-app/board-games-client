@@ -7,6 +7,16 @@
   text-align: center;
   padding: 0;
 }
+
+body {
+  min-height: 100vh;
+  background-color: #f9f6ee;
+}
+
+img {
+  display: inline-block;
+}
+
 nav h3 {
   color: whitesmoke;
 }
@@ -16,7 +26,7 @@ nav h3 {
   display: block;
 }
 
-.Header{
+.Header {
   display: flex;
   justify-content: space-between;
   margin-top: 1rem;
@@ -30,10 +40,11 @@ nav h3 {
   justify-content: center;
   text-decoration: none;
   border: 1px solid grey;
+}
+
 .menu-link {
   padding: 8px;
   margin: 4px;
-  
 }
 
 .menu-link:hover {
@@ -46,38 +57,38 @@ nav h3 {
   justify-content: center;
   flex-direction: column;
   align-items: center;
-
-}
-
-.dice-container {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  align-items: center;
-
+  height: 65vh;
 }
 
 .dice-image {
-  width: 15%;
+  width: 35%;
   height: auto;
   margin-top: 5%;
-  margin-bottom: 1%;
-
-  display: inline-flex;
+  margin-bottom: 2%;
 }
 
 .formContainer {
   max-width: 400px;
-  margin: 20px auto;
+  margin: 40px auto;
   padding: 20px;
-  border: 1px solid #ccc;
+  border: 1px solid 0px 0px 8px rgba(0, 0, 0, 0.5);
   border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: auto;
+  width: auto;
+  text-align: center;
+  background-color: whitesmoke;
+  box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.1);
 }
 
 .labelForm {
-  display: inline-flex;
+  display: flex;
   flex-direction: column;
-  margin-bottom: 15px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  align-items: center;
 }
 
 .labelForm label {
@@ -91,27 +102,110 @@ nav h3 {
   border: 1px solid #ccc;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
+  width: 250px;
+  border-radius: 8px;
+  background-color: rgba (249, 246, 238, 1);
 }
-
-}
-
 
 .card {
   margin: 1rem;
-  
+
 }
 
-.Cointainer{
+.Cointainer {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 10px;
 }
 
+.Container {
+  display: inline-flex;
+  align-items: center;
+}
 .card-body {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   height: 100%;
+}
+
+.checkbox-container {
+  width: auto;
+  display: inline-block;
+}
+
+.checkbox-options {
+  display: flex;
+  align-items: center;
+  user-select: none;
+  margin: auto;
+}
+
+.checkbox {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 5px;
+  cursor: pointer;
+  user-select: none;
+  height: 20px;
+  width: 20px;
+  padding: 5px;
+  border-radius: 4px;
+  background-color: whitesmoke;
+  color: whitesmoke;
+}
+
+.checkbox:hover {
+  border-color: darkgray;
+  background-color: gray;
+}
+
+.checkbox:indeterminate {
+  background-color: whitesmoke;
+  background-image: none;
+}
+
+.footer {
+  margin-top: 20px;
+  padding: 50px;
+  background-color: #1f2937;
+  color: whitesmoke;
+  text-align: center;
+}
+
+.short-page {
+  display: flex;
+  flex-direction: column;
+  min-height: 70vh;
+}
+
+.dice-page .footer {
+  margin-top: auto;
+}
+
+.formTest {
+  max-width: 400px;
+  margin: 40px auto;
+  padding: 20px;
+  border: 1px solid 0px 0px 8px rgba(0, 0, 0, 0.5);
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: auto;
+  width: auto;
+  text-align: center;
+  background-color: whitesmoke;
+  box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.1);
+}
+
+.labelTest {
+  display: flex;
+  flex-direction: column;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  align-items: center;
 }

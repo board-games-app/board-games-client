@@ -26,6 +26,7 @@ function Word() {
   };
 
   return (
+    <div className="short-page">
     <div  className="card-body">
       <h2>Word</h2>
       <div className="Cointainer">
@@ -45,6 +46,7 @@ function Word() {
         ))}
       </div>
     </div>
+    </div >
   );
 }
 
