@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import homeImg from "../assets/noun-home-1144.png"
 
 function Navbar() {
   return (
@@ -6,7 +7,7 @@ function Navbar() {
     <div className ="flex flex-wrap items-center justify-between mx-auto p-4 m-0 bg-gray-800 ms-0">
           <Link to="/">
             <img className="img_navbar"
-              src="./src/assets/noun-home-1144.png"
+              src={homeImg}
               alt="home_icon"
             />
           </Link>
@@ -22,7 +23,7 @@ function Navbar() {
               </Link>
 
               <Link to="/test-yourself">
-                <h3 >Test Yourself</h3>
+                <h3 >Can't decide?</h3>
               </Link>
             </ul>
           </div>

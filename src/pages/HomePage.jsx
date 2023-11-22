@@ -63,12 +63,10 @@ function HomePage() {
                     <div className="card-body items-center text-center">
                       <h3 className="card-title">{game.name}</h3>
                       <img className="rounded" src={game.image} />
-                      <p className="card-actions justify-end">
-                        Type of game: {game.type_of_Game}
-                      </p>
-                      <p className="card-actions justify-end">
+                      <h3 className="card-body">
                         Year created: {game.year}
-                      </p>
+                      </h3>
+                      
                     </div>
                   </Link>
                   <button

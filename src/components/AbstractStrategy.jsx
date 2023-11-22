@@ -30,7 +30,7 @@ function AbstractStrategy() {
   return (
     <div className="short-page">
       <div className="card-body">
-        <h2>Abstract Strategy</h2>
+        <h2 className="title_h2">Abstract Strategy</h2>
         <div className="Cointainer">
           {abstractStrategyGames.map((game) => (
             <Link

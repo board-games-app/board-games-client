@@ -44,7 +44,7 @@ function TestYourself() {
     return gameSuggestions.filter(
       (game) =>
         String(game.number_of_players).toLowerCase() ===
-        lowercaseUserAnswers.number_of_players &&
+          lowercaseUserAnswers.number_of_players &&
         game.type_of_Game.toLowerCase() === lowercaseUserAnswers.type_of_Game
     );
   };
@@ -52,13 +52,14 @@ function TestYourself() {
   return (
     <div className="short-page">
       <div>
-        <h2>
+        <h2 className="test_h2">
           Answer these questions to see our suggestions to your next game date
         </h2>
         <form className="formTest" onSubmit={handleSubmit}>
           <br />
           <div className="labelTest">
-            <label><p>How many players are in your game?</p>
+            <label>
+              <p>How many players are in your game?</p>
               <div className="checkbox-container">
                 <div className="checkbox-options">
                   <input
@@ -69,12 +70,12 @@ function TestYourself() {
                     onChange={handleRadioChange}
                     className="checkbox"
                   />
-                  <label >2</label>
+                  <label htmlFor="Two">2</label>
                 </div>
                 <div className="checkbox-options">
                   <input
                     type="radio"
-                    id=""
+                    id="2-4"
                     name="number_of_players"
                     value="2-4"
                     onChange={handleRadioChange}
@@ -85,7 +86,7 @@ function TestYourself() {
                 <div className="checkbox-options">
                   <input
                     type="radio"
-                    id=""
+                    id="2-6"
                     name="number_of_players"
                     value="2-6"
                     onChange={handleRadioChange}
@@ -96,7 +97,7 @@ function TestYourself() {
                 <div className="checkbox-options">
                   <input
                     type="radio"
-                    id=""
+                    id="2-8"
                     name="number_of_players"
                     value="2-8"
                     onChange={handleRadioChange}
@@ -107,7 +108,7 @@ function TestYourself() {
                 <div className="checkbox-options">
                   <input
                     type="radio"
-                    id=""
+                    id="3-4"
                     name="number_of_players"
                     value="3-4"
                     onChange={handleRadioChange}
@@ -118,7 +119,7 @@ function TestYourself() {
                 <div className="checkbox-options">
                   <input
                     type="radio"
-                    id=""
+                    id="3-6"
                     name="number_of_players"
                     value="3-6"
                     onChange={handleRadioChange}
@@ -129,7 +130,7 @@ function TestYourself() {
                 <div className="checkbox-options">
                   <input
                     type="radio"
-                    id=""
+                    id="Four"
                     name="number_of_players"
                     value={4}
                     onChange={handleRadioChange}
@@ -140,7 +141,7 @@ function TestYourself() {
                 <div className="checkbox-options">
                   <input
                     type="radio"
-                    id=""
+                    id="2 teams"
                     name="number_of_players"
                     value="2 teams"
                     onChange={handleRadioChange}
@@ -152,7 +153,8 @@ function TestYourself() {
             </label>
 
             <br />
-            <label><p>Which of the following types of games aligns with you?</p>
+            <label>
+              <p>Which of the following types of games aligns with you?</p>
               <div className="checkbox-container">
                 <div className="checkbox-options">
                   <input
@@ -197,31 +199,58 @@ function TestYourself() {
                     className="checkbox"
                   />
                   <label>Word Game</label>
+
+                  
+                </div>
+                <div className="checkbox-options">
+                  <input
+                    type="radio"
+                    id="Mixed Genre"
+                    name="type_of_Game"
+                    value="Mixed Genre"
+                    onChange={handleRadioChange}
+                    className="checkbox"
+                  />
+                  <label>Mixed Genre</label>
                 </div>
               </div>
             </label>
             <br />
-            <button type="submit" className="btn">Get Suggestion!</button>
+            <button type="submit" className="btn">
+              Get Suggestion!
+            </button>
           </div>
         </form>
 
         <section className="Container">
-        <ul className="listTest">
-          {filteredGameSuggestions.map((game) => (
-
-            <Link to={`/all-games/${game.id}`} key={game.id} className="card w-96 bg-base-100 shadow-xl">
-              <div className="card-body" >
-                <div className="card-body items-center text-center">
-                <h3 className="card-title">{game.name}</h3>
-                <img className="rounded" src={game.image} alt="" />
-                <p className="card-actions justify-end">Type of game: {game.type_of_Game}</p>
-                <p className="card-actions justify-end">Year created: {game.year}</p>
+          <ul className="listTest">
+            {filteredGameSuggestions.length > 0 ? (
+              filteredGameSuggestions.map((game) => (
+                <Link
+                  to={`/all-games/${game.id}`}
+                  key={game.id}
+                  className="card w-96 bg-base-100 shadow-xl"
+                >
+                  <div className="card-body">
+                    <div className="card-body items-center text-center">
+                      <h3 className="card-title">{game.name}</h3>
+                      <img className="rounded" src={game.image} alt="" />
+                      <p className="card-actions justify-end">
+                        Type of game: {game.type_of_Game}
+                      </p>
+                      <p className="card-actions justify-end">
+                        Year created: {game.year}
+                      </p>
+                    </div>
+                  </div>
+                </Link>
+              ))
+            ) : (
+              <div className="card w-96 bg-base-100 shadow-xl">
+              <p className="card-title">Sorry, there are no games with those characteristics.</p>
               </div>
-              </div>
-            </Link>
-
-          ))}
-        </ul>
+            )}
+          </ul>
         </section>
       </div>
     </div>
