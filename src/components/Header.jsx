@@ -5,7 +5,7 @@ function Header() {
   return (
     <>
     <br />
-    <div className="menu menu-vertical lg:menu-horizontal bg-base-200 rounded-box">
+    <div className="Header">
       
       <Link to="/"  className="menu-link">
         <h2 >All Games</h2>
