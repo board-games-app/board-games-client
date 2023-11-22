@@ -16,7 +16,7 @@ function Word() {
       .get(API_URL)
       .then((response) => {
         const games = response.data;
-        const wordGames = games.filter((game) => game.type_of_Game === "Word");
+        const wordGames = games.filter((game) => game.type_of_Game === "Word Game");
         setWordGames(wordGames);
       })
       .catch((error) => {
