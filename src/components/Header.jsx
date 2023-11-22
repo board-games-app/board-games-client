@@ -3,7 +3,7 @@ function Header() {
 
  
   return (
-    <div className="Header menu menu-vertical lg:menu-horizontal bg-base-200 rounded-box ">
+    <div className="Header menu menu-vertical lg:menu-horizontal bg-base-600 rounded-box ">
       
       <Link to="/" style={{ textDecoration: 'none' }} className="menu-link">
         <h2 >All Games</h2>

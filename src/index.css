@@ -8,7 +8,6 @@
   padding: 0;
 }
 
-<<<<<<< HEAD
 body {
   min-height: 100vh;
   background-color: #f9f6ee;
@@ -18,8 +17,6 @@ img {
   display: inline-block;
 }
 
-=======
->>>>>>> 892d8eb839bb7293e3146d5a92533ecf3dc819aa
 nav h3 {
   color: whitesmoke;
 }
@@ -38,21 +35,6 @@ nav h3 {
   align-items: center;
 }
 
-<<<<<<< HEAD
-.Games-list {
-  padding: 2rem;
-  margin-top: 2rem;
-  justify-content: center;
-  text-decoration: none;
-  border: 1px solid grey;
-}
-
-.menu-link {
-  padding: 8px;
-  margin: 4px;
-}
-=======
->>>>>>> 892d8eb839bb7293e3146d5a92533ecf3dc819aa
 
 .menu-link:hover {
   background-color: rgba(0, 0, 0, 0.1);
@@ -110,14 +92,10 @@ nav h3 {
   border: 1px solid #ccc;
   display: flex;
   justify-content: center;
-<<<<<<< HEAD
   align-items: flex-start;
   width: 250px;
   border-radius: 8px;
   background-color: rgba (249, 246, 238, 1);
-=======
-  align-items: center;
->>>>>>> 892d8eb839bb7293e3146d5a92533ecf3dc819aa
 }
 
 .card {
@@ -143,7 +121,6 @@ nav h3 {
   height: 100%;
 }
 
-<<<<<<< HEAD
 .checkbox-container {
   width: auto;
   display: inline-block;
@@ -222,7 +199,6 @@ nav h3 {
   margin-bottom: 30px;
   align-items: center;
 }
-=======
 
 .Container-details{
   display: flex;
@@ -234,4 +210,3 @@ nav h3 {
 }
 
 
->>>>>>> 892d8eb839bb7293e3146d5a92533ecf3dc819aa
