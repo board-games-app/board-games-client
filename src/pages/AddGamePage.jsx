@@ -10,12 +10,18 @@ function AddGamePage() {
     const [numberOfPlayers, setNumberOfPlayers] = useState("");
     const [age, setAge] = useState("");
     const [year, setYear] = useState("");
-    const [typeOfGame, setTypeOfGame] = useState("");
+    const [typeOfGame, setTypeOfGame] = useState([]);
     const [image, setImage] = useState("");
     const [wikiWebsite, setWikiWebsite] = useState("");
+    const [selectedCategories, setSelectedCategories] = useState([]);
+
 
     const navigate = useNavigate();
 
+    const formatSelectedTypes = (types) => {
+        return types.join(', ');
+    };
+    
     const handleSubmit = (e) => {
         e.preventDefault();
 
@@ -25,7 +31,7 @@ function AddGamePage() {
             number_of_players: numberOfPlayers,
             age,
             year,
-            type_of_Game: formatSelectedTypes(typeOfGame),
+            type_of_Game: formatSelectedTypes(selectedCategories),
             image,
             wiki_website: wikiWebsite
         };
@@ -43,15 +49,12 @@ function AddGamePage() {
     const handleTypeOfGameChange = (e) => {
         const { value, checked } = e.target;
         if (checked) {
-            setTypeOfGame(prevTypes => [...prevTypes, value]);
+            setSelectedCategories(prevCategories => [...prevCategories, value]);
         } else {
-            setTypeOfGame(prevTypes => prevTypes.filter(type => type !== value));
+            setSelectedCategories(prevCategories => prevCategories.filter(category => category !== value));
         }
     };
-
-    const formatSelectedTypes = (types) => {
-        return types.join(', ');
-    };
+    
 
     return (
         <div>
@@ -127,7 +130,7 @@ function AddGamePage() {
                                 <input
                                     type="checkbox"
                                     value="Abstract Strategy"
-                                    checked={typeOfGame.includes('Abstract Strategy')}
+                                    checked={selectedCategories.includes('Abstract Strategy')}
                                     onChange={handleTypeOfGameChange}
                                     className="checkbox"
                                 />
@@ -137,7 +140,7 @@ function AddGamePage() {
                                 <input
                                     type="checkbox"
                                     value="Mixed Genre"
-                                    checked={typeOfGame.includes('Mixed Genre')}
+                                    checked={selectedCategories.includes('Mixed Genre')}
                                     onChange={handleTypeOfGameChange}
                                     className="checkbox"
                                 />
@@ -147,7 +150,7 @@ function AddGamePage() {
                                 <input
                                     type="checkbox"
                                     value="Party"
-                                    checked={typeOfGame.includes('Party')}
+                                    checked={selectedCategories.includes('Party')}
                                     onChange={handleTypeOfGameChange}
                                     className="checkbox"
                                 />
@@ -157,7 +160,7 @@ function AddGamePage() {
                                 <input
                                     type="checkbox"
                                     value="Strategy"
-                                    checked={typeOfGame.includes('Strategy')}
+                                    checked={selectedCategories.includes('Strategy')}
                                     onChange={handleTypeOfGameChange}
                                     className="checkbox"
                                 />
@@ -167,7 +170,7 @@ function AddGamePage() {
                                 <input
                                     type="checkbox"
                                     value="Word"
-                                    checked={typeOfGame.includes('Word')}
+                                    checked={selectedCategories.includes('Word')}
                                     onChange={handleTypeOfGameChange}
                                     className="checkbox"
                                 />
