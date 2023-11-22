@@ -160,7 +160,6 @@ nav h3 {
 }
 
 .footer {
-  margin-top: 20px;
   padding: 50px;
   background-color: #1f2937;
   color: whitesmoke;
@@ -201,7 +200,7 @@ nav h3 {
   align-items: center;
 }
 
-.Container-details{
+.Container-details {
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -210,4 +209,14 @@ nav h3 {
   height: 100%;
 }
 
+.random-section {
+background-color:#f0f6ff;
+margin-top: 3%;
+padding: 2%;
+}
 
+.pick-random {
+  font-size: larger;
+ font-weight: 600;
+ margin-bottom: 8px;
+}
