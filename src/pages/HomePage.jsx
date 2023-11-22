@@ -86,7 +86,7 @@ function HomePage() {
           })}
         </section>
       </div>
-      <div>
+      <div className="random-section">
         <RandomGame />
       </div>
     </div>

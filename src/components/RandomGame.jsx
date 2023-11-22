@@ -37,37 +37,32 @@ function RandomGame() {
     return (
         <div>
             <div>
-                <h2>Pick a random game!</h2>
+                <h2 className="pick-random">Pick a random game!</h2>
             </div>
 
-            <button className="btn" onClick={handleButtonClick}>Pick it here!</button>
+            <button className="btn btn-xs sm:btn-sm md:btn-md btn-wide btn-neutral" onClick={handleButtonClick}>Pick it here!</button>
 
             {showGame && (
                 <div>
                     {loading ? (
                         <p>Loading random game...</p>
                     ) : randomGame ? (
-                        <Link to={`/all-games/${randomGame.id}`} key={randomGame.id}>
-                        <div>
-                            <div className="gameDetails">
-                                <h1>{randomGame.name}</h1>
+                        <div className="Container">
+                        <Link to={`/all-games/${randomGame.id}`} key={randomGame.id} className="card w-96 bg-base-100 shadow-xl">
+                        <div className="card-body">
+                            <div className="card-body items-center text-center">
+                                <h1 className="card-title">{randomGame.name}</h1>
                                 <img
-                                    className="Img-games-home"
+                                    className="rounded"
                                     src={randomGame.image}
                                     alt={randomGame.name}
                                 />
-                                {/*<p>{randomGame.description}</p>
-                                <p>Number of players: {randomGame.number_of_players}</p>*/}
                                  <p>Type of game: {randomGame.type_of_Game}</p>
                                 <p>Year created: {randomGame.year}</p>
-                                {/*<p>{randomGame.age}</p>*/}
-                               
-                               {/*<Link to={randomGame.wiki_website} target="_blank">
-                                    Wiki Link
-                                </Link>*/}
                             </div>
                         </div>
                         </Link>
+                        </div>
                     ) : (
                         <p>No game data available.</p>
                     )}

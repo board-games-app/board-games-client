@@ -35,18 +35,6 @@ nav h3 {
   align-items: center;
 }
 
-.Games-list {
-  padding: 2rem;
-  margin-top: 2rem;
-  justify-content: center;
-  text-decoration: none;
-  border: 1px solid grey;
-}
-
-.menu-link {
-  padding: 8px;
-  margin: 4px;
-}
 
 .menu-link:hover {
   background-color: rgba(0, 0, 0, 0.1);
@@ -108,7 +96,6 @@ nav h3 {
   width: 250px;
   border-radius: 8px;
   background-color: rgba (249, 246, 238, 1);
-  align-items: center;
 }
 
 .card {
@@ -173,7 +160,6 @@ nav h3 {
 }
 
 .footer {
-  margin-top: 20px;
   padding: 50px;
   background-color: #1f2937;
   color: whitesmoke;
@@ -214,7 +200,7 @@ nav h3 {
   align-items: center;
 }
 
-.Container-details{
+.Container-details {
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -223,8 +209,19 @@ nav h3 {
   height: 100%;
 }
 
+.random-section {
+background-color:#f0f6ff;
+margin-top: 3%;
+padding: 2%;
+}
 
 .title_h2 {
   font-size: larger;
   font-weight: 800;
+}
+
+.pick-random {
+  font-size: larger;
+ font-weight: 600;
+ margin-bottom: 8px;
 }
