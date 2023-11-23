@@ -247,7 +247,7 @@ function TestYourself() {
                 </Link>
               ))
             ) : (
-              <div className="card w-96 bg-base-100 shadow-xl">
+              <div className="card w-90% md:w-96 bg-base-100 shadow-xl">
               <p className="card-title">Sorry, there are no games with those characteristics.</p>
               </div>
             )}
