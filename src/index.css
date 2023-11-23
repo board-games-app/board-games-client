@@ -36,7 +36,7 @@ nav h3 {
   border-radius: 20px;
   height: 4rem;
   align-items: center;
-  margin: 2rem
+  margin: 2rem;
 
   @media (max-width: 720px) {
     flex-direction: column; 
