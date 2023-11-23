@@ -29,12 +29,12 @@ function AbstractStrategy() {
   };
 
   const separateCategories = (typeOfGame) => {
-    return typeOfGame.split(', ');
+    return typeOfGame.split(", ");
   };
 
   return (
     <div className="short-page">
-      <div className="card-body">
+      
         <h2 className="title_h2">Abstract Strategy</h2>
         <div className="Container-home">
           {abstractStrategyGames.map((game) => (
@@ -46,14 +46,16 @@ function AbstractStrategy() {
               <div className="card-body items-center text-center">
                 <h3 className="card-title">{game.name}</h3>
                 <img className="rounded-xl" src={game.image} alt="" />
-                <h3 className="card-body ">
-                        Number of Players: {game.number_of_players}
-                      </h3>
+                <h3 className="card-body">
+                  <div className="badge badge-ghost">
+                    Players: {game.number_of_players}
+                  </div>
+                </h3>
               </div>
             </Link>
           ))}
         </div>
-      </ div>
+      
     </div>
   );
 }

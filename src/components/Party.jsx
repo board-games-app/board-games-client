@@ -34,26 +34,28 @@ function Party() {
 
   return (
     <div className="short-page">
-      <div className="card-body">
+      
         <h2 className="title_h2">Party</h2>
-        <div className="Cointainer">
+        <div className="Container-home">
           {partyGames.map((game) => (
             <Link
               to={`./game-details/${game.id}`}
               key={game.id}
-              className="card w-96 bg-base-100 shadow-xl"
+              className="card bg-base-100 shadow-xl"
             >
               <div className="card-body items-center text-center">
                 <h3 className="card-title">{game.name}</h3>
                 <img className="rounded-xl" src={game.image} />
-                <h3 className="card-body ">
-                        Number of Players: {game.number_of_players}
-                      </h3>
+                <h3 className="card-body">
+                  <div className="badge badge-ghost">
+                    Players: {game.number_of_players}
+                  </div>
+                </h3>
               </div>
             </Link>
           ))}
         </div>
-      </div>
+    
     </div>
   );
 }

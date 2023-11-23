@@ -57,8 +57,9 @@ function RandomGame() {
                                     src={randomGame.image}
                                     alt={randomGame.name}
                                 />
-                                 <p>Type of game: {randomGame.type_of_Game}</p>
-                                <p>Year created: {randomGame.year}</p>
+                                  <h3 className="card-body">
+                        <div class="badge badge-ghost">Players: {randomGame.number_of_players}</div>
+                      </h3>
                             </div>
                         </div>
                         </Link>

@@ -9,6 +9,7 @@ function HomePage() {
   const [filteredGames, setFilteredGames] = useState([]);
   const [query, setQuery] = useState("");
   const [gameToDelete, setGameToDelete] = useState([]);
+  
 
   useEffect(() => {
     axios
@@ -58,7 +59,7 @@ function HomePage() {
         <section className="Container-home">
           {filteredGames.map((game) => {
             return (
-              <div key={game.id} className="card bg-base-100 shadow-xl ">
+              <div key={game.id} className="card bg-base-100 shadow-xl">
                 <div className="card-body items-center text-center">
                   <Link to={`./all-games/${game.id}`}>
                     <div className="card-body items-center text-center">

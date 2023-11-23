@@ -32,6 +32,7 @@ nav h3 {
 .img_navbar {
   width: 20%;
   height: 20%;
+  margin-left: 1rem;
 }
 
 .menu-navbar ul {
@@ -67,15 +68,21 @@ nav h3 {
 .iconDice:hover,
 .iconAdd:hover,
 .iconQuestion:hover, 
-.img_navbar:hover {
+.img_navbar:hover 
+.card:hover {
   color: #61dafb; 
 }
 
 .iconDice:hover,
 .iconAdd:hover,
 .iconQuestion:hover, 
-.img_navbar:hover  {
+.img_navbar:hover
+ {
   transform: scale(1.2); 
+}
+
+.card:hover  {
+  transform: scale(1.1); 
 }
 
 
@@ -218,6 +225,10 @@ nav h3 {
     align-content: center;
   }
 
+}
+
+.card {
+  margin: 2rem;
 }
 
 
