@@ -65,7 +65,7 @@ function HomePage() {
                       <h3 className="card-title">{game.name}</h3>
                       <img className="rounded" src={game.image} />
                       <h3 className="card-body">
-                        Year created: {game.year}
+                        <div class="badge badge-ghost">Players: {game.number_of_players}</div>
                       </h3>
                       
                     </div>

@@ -25,11 +25,12 @@ function GameDetails() {
   }, [gameId]);
 
   return (
-    <div className="Container-details">
-      <div className="card w-96 bg-base-100 shadow-xl image-full">
-        <div className="card-body">
+    <div className="short-page">
+      <div className="Container-details">
+        <div className="card w-96 bg-base-100 shadow-xl image-full">
+          <div className="card-body">
             <h2 className="card-title">{game.name}</h2>
-            <img className="rounded-xl"  src={game.image} alt="" />
+            <img className="rounded-xl" src={game.image} alt="" />
             <br />
             <p>{game.description}</p>
             <br />
@@ -42,8 +43,9 @@ function GameDetails() {
             <p>Type of game: {game.type_of_Game}</p>
             <br />
             <Link to={game.wiki_website} target="_blank" className="menu-link">
-            Wiki Link
+              Wiki Link
             </Link>
+          </div>
         </div>
       </div>
     </div>

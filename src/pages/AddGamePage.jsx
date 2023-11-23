@@ -14,6 +14,7 @@ function AddGamePage() {
     const [image, setImage] = useState("");
     const [wikiWebsite, setWikiWebsite] = useState("");
     const [selectedCategories, setSelectedCategories] = useState([]);
+    
 
 
     const navigate = useNavigate();
@@ -66,7 +67,7 @@ function AddGamePage() {
             <form className="formContainer" onSubmit={handleSubmit}>
                 <div className="labelForm">
                     <label>
-                        Name
+                        <p>Name</p>
                         <input
                             type="text"
                             name="name"
@@ -78,7 +79,7 @@ function AddGamePage() {
                         />
                     </label>
                     <label>
-                        Description
+                        <p>Description</p>
                         <input
                             type="text"
                             name="description"
@@ -90,7 +91,7 @@ function AddGamePage() {
                         />
                     </label>
                     <label>
-                        Number of players
+                        <p>Number of players</p>
                         <input
                             type="number"
                             name="number_of_players"
@@ -102,7 +103,7 @@ function AddGamePage() {
                         />
                     </label>
                     <label>
-                        Age
+                        <p>Age</p>
                         <input
                             type="number"
                             name="age"
@@ -114,7 +115,7 @@ function AddGamePage() {
                         />
                     </label>
                     <label>
-                        Year
+                        <p>Year</p>
                         <input
                             type="number"
                             name="year"
@@ -124,8 +125,7 @@ function AddGamePage() {
                             onChange={(e) => { setYear(e.target.value); }}
                         />
                     </label>
-                    <label>
-                        Type of game
+                    <label><p>Type of game</p></label>
                         <div>
                             <div className="checkbox-options">
                                 <input
@@ -178,9 +178,8 @@ function AddGamePage() {
                                 <label>Word</label>
                             </div>
                         </div>
-                    </label>
                     <label>
-                        Image link
+                        <p>Image link</p>
                         <input
                             type="text"
                             name="image"
@@ -191,7 +190,7 @@ function AddGamePage() {
                         />
                     </label>
                     <label>
-                        Wiki website
+                        <p>Wiki website</p>
                         <input
                             type="text"
                             name="wiki_website"

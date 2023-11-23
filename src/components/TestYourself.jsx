@@ -10,6 +10,7 @@ function TestYourself() {
 
   const [gameSuggestions, setGameSuggestions] = useState([]);
   const [filteredGameSuggestions, setFilteredGameSuggestions] = useState([]);
+  const [buttonClicked, setButtonClicked] = useState(false);
 
   useEffect(() => {
     axios
@@ -24,6 +25,7 @@ function TestYourself() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    setButtonClicked(true);
 
     const filteredGames = suggestGames(answers);
     setFilteredGameSuggestions(filteredGames);
@@ -44,7 +46,7 @@ function TestYourself() {
     return gameSuggestions.filter(
       (game) =>
         String(game.number_of_players).toLowerCase() ===
-          lowercaseUserAnswers.number_of_players &&
+        lowercaseUserAnswers.number_of_players &&
         game.type_of_Game.toLowerCase() === lowercaseUserAnswers.type_of_Game
     );
   };
@@ -54,13 +56,14 @@ function TestYourself() {
       <div>
         <br />
         <h2 className="title_h2">
-          Answer these questions to see our suggestions to your next game date
+          Answer these questions to see <br></br> our suggestions to your next game date
         </h2>
         <form className="formTest" onSubmit={handleSubmit}>
           <br />
           <div className="labelTest">
             <label>
               <p>How many players are in your game?</p>
+              </label>
               <div className="checkbox-container">
                 <div className="checkbox-options">
                   <input
@@ -151,11 +154,11 @@ function TestYourself() {
                   <label>2 teams</label>
                 </div>
               </div>
-            </label>
 
             <br />
             <label>
               <p>Which of the following types of games aligns with you?</p>
+              </label>
               <div className="checkbox-container">
                 <div className="checkbox-options">
                   <input
@@ -201,7 +204,7 @@ function TestYourself() {
                   />
                   <label>Word Game</label>
 
-                  
+
                 </div>
                 <div className="checkbox-options">
                   <input
@@ -215,7 +218,6 @@ function TestYourself() {
                   <label>Mixed Genre</label>
                 </div>
               </div>
-            </label>
             <br />
             <button type="submit" className="btn">
               Get Suggestion!
@@ -225,32 +227,34 @@ function TestYourself() {
 
         <section className="Container">
           <ul className="listTest">
-            {filteredGameSuggestions.length > 0 ? (
-              filteredGameSuggestions.map((game) => (
-                <Link
-                  to={`/all-games/${game.id}`}
-                  key={game.id}
-                  className="card w-96 bg-base-100 shadow-xl"
-                >
-                  <div className="card-body">
-                    <div className="card-body items-center text-center">
-                      <h3 className="card-title">{game.name}</h3>
-                      <img className="rounded" src={game.image} alt="" />
-                      <p className="card-actions justify-end">
-                        Type of game: {game.type_of_Game}
-                      </p>
-                      <p className="card-actions justify-end">
-                        Year created: {game.year}
-                      </p>
-                    </div>
-                  </div>
-                </Link>
-              ))
-            ) : (
+            {buttonClicked && filteredGameSuggestions.length === 0 && (
               <div className="card w-90% md:w-96 bg-base-100 shadow-xl">
-              <p className="card-title">Sorry, there are no games with those characteristics.</p>
+                <div role="alert" className="alert">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" className="stroke-info shrink-0 w-6 h-6"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                  <span>Sorry, there are no games with these characteristics.</span>
+                </div>
               </div>
             )}
+            {filteredGameSuggestions.length > 0 && filteredGameSuggestions.map((game) => (
+              <Link
+                to={`/all-games/${game.id}`}
+                key={game.id}
+                className="card w-96 bg-base-100 shadow-xl"
+              >
+                <div className="card-body">
+                  <div className="card-body items-center text-center">
+                    <h3 className="card-title">{game.name}</h3>
+                    <img className="rounded" src={game.image} alt="" />
+                    <p className="card-actions justify-end">
+                      Type of game: {game.type_of_Game}
+                    </p>
+                    <p className="card-actions justify-end">
+                      Year created: {game.year}
+                    </p>
+                  </div>
+                </div>
+              </Link>
+            ))}
           </ul>
         </section>
       </div>

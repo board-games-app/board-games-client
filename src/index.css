@@ -10,7 +10,7 @@
 
 body {
   min-height: 100vh;
-  background-color: #f9f6ee;
+  background-color: #f4f3f0;
 }
 
 img {
@@ -67,7 +67,7 @@ nav h3 {
 }
 
 .dice-image {
-  width: 35%;
+  width: 25%;
   height: auto;
   margin-top: 5%;
   margin-bottom: 2%;
@@ -76,7 +76,7 @@ nav h3 {
 .formContainer {
   max-width: 30%;
   margin: 40px auto;
-  padding: 20px;
+  padding: 10px;
   border: 1px solid 0px 0px 8px rgba(0, 0, 0, 0.5);
   border-radius: 8px;
   display: flex;
@@ -100,14 +100,14 @@ nav h3 {
 .labelForm {
   display: flex;
   flex-direction: column;
-  margin-top: 30px;
-  margin-bottom: 30px;
+  margin-top: 20px;
+  margin-bottom: 20px;
   align-items: center;
 }
 
 .labelForm label {
   font-size: 16px;
-  margin-bottom: 5px;
+  padding: 7px;
 }
 
 .inputField {
@@ -152,6 +152,7 @@ nav h3 {
   align-items: center;
   justify-content: center;
   height: 100%;
+  padding: 10px;
 }
 
 .checkbox-container {
@@ -163,7 +164,7 @@ nav h3 {
   display: flex;
   align-items: center;
   user-select: none;
-  margin: auto;
+  color: slategray;
 }
 
 .checkbox {
@@ -211,7 +212,7 @@ nav h3 {
 .formTest {
   max-width: 30%;
   margin: 40px auto;
-  padding: 20px;
+  padding: 10px;
   border: 1px solid 0px 0px 8px rgba(0, 0, 0, 0.5);
   border-radius: 8px;
   display: flex;
@@ -230,7 +231,6 @@ nav h3 {
     margin: 10px auto; 
   }
 }
-
 
 .labelTest {
   display: flex;
@@ -258,12 +258,22 @@ padding: 2%;
 .title_h2 {
   font-size: larger;
   font-weight: 800;
-  width: 20%;
+  width: auto;
   margin: 0 auto;
   text-align: center;
 }
 
+
 @media screen and (max-width: 720px) {
+  .title_h2{
+  width: 90vw;
+  margin: 0 auto;
+  text-align: center;
+  }
+  
+}
+
+@media screen and (max-width: 375px) {
   .title_h2{
   width: 80vw;
   margin: 0 auto;
@@ -276,4 +286,9 @@ padding: 2%;
   font-size: larger;
  font-weight: 600;
  margin-bottom: 8px;
+}
+
+p {
+  padding: 10px;
+  font-weight: 500;
 }
