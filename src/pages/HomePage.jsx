@@ -55,10 +55,10 @@ function HomePage() {
             className="input input-bordered w-full max-w-xs"
           />
         </div>
-        <section className="Cointainer">
+        <section className="Container-home">
           {filteredGames.map((game) => {
             return (
-              <div key={game.id} className="card w-96 bg-base-100 shadow-xl">
+              <div key={game.id} className="card bg-base-100 shadow-xl ">
                 <div className="card-body items-center text-center">
                   <Link to={`./all-games/${game.id}`}>
                     <div className="card-body items-center text-center">

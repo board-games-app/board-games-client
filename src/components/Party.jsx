@@ -46,12 +46,9 @@ function Party() {
               <div className="card-body items-center text-center">
                 <h3 className="card-title">{game.name}</h3>
                 <img className="rounded-xl" src={game.image} />
-                <p className="card-actions justify-end">
-                  Type of game: {game.type_of_Game}
-                </p>
-                <p className="card-actions justify-end">
-                  Year created: {game.year}
-                </p>
+                <h3 className="card-body ">
+                        Number of Players: {game.number_of_players}
+                      </h3>
               </div>
             </Link>
           ))}

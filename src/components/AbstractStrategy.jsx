@@ -36,18 +36,19 @@ function AbstractStrategy() {
     <div className="short-page">
       <div className="card-body">
         <h2 className="title_h2">Abstract Strategy</h2>
-        <div className="Cointainer">
+        <div className="Container-home">
           {abstractStrategyGames.map((game) => (
             <Link
               to={`./game-details/${game.id}`}
               key={game.id}
-              className="card w-96 bg-base-100 shadow-xl"
+              className="card bg-base-100 shadow-xl"
             >
               <div className="card-body items-center text-center">
                 <h3 className="card-title">{game.name}</h3>
                 <img className="rounded-xl" src={game.image} alt="" />
-                <p>Type of game: {game.type_of_Game}</p>
-                <p>Year created: {game.year}</p>
+                <h3 className="card-body ">
+                        Number of Players: {game.number_of_players}
+                      </h3>
               </div>
             </Link>
           ))}

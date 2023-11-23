@@ -17,11 +17,82 @@ img {
   display: inline-block;
 }
 
-
-
 nav h3 {
   color: whitesmoke;
 }
+
+.Navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #1e2a38; 
+  padding: 10px 20px;
+}
+
+.img_navbar {
+  width: 20%;
+  height: 20%;
+}
+
+.menu-navbar ul {
+  list-style-type: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+.lines-navbar {
+  margin-right: 20px;
+}
+
+.iconDice,
+.iconAdd {
+  width: 2rem;
+  height: auto;
+  margin-bottom: 4px; 
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+.iconQuestion {
+  width: 1.5rem;
+  height: auto;
+  margin-bottom: 4px; 
+  cursor: pointer;
+  transition: transform 0.3s;
+  
+}
+
+.lines-navbar:hover,
+.iconDice:hover,
+.iconAdd:hover,
+.iconQuestion:hover, 
+.img_navbar:hover {
+  color: #61dafb; 
+}
+
+.iconDice:hover,
+.iconAdd:hover,
+.iconQuestion:hover, 
+.img_navbar:hover  {
+  transform: scale(1.2); 
+}
+
+
+@media screen and (max-width: 750px) {
+  .text-slate-50 {
+    display: none; 
+  }
+
+  .iconDice,
+  .iconAdd,
+  .iconQuestion {
+    width: 2.8rem;
+    margin-bottom: 0;
+  
+  }
+}
+
 
 
 .img_navbar {
@@ -32,7 +103,7 @@ nav h3 {
 .Header {
   display: flex;
   justify-content: space-evenly;
-  background-color: lightgrey;
+  background-color: #f0f6ff;
   border-radius: 20px;
   height: 4rem;
   align-items: center;
@@ -50,6 +121,10 @@ nav h3 {
     text-align: center; 
     height: auto;
   }
+}
+
+.header-h2 {
+  font-weight: bold;
 }
 
 .menu-link:hover {
@@ -122,25 +197,29 @@ nav h3 {
   background-color: rgba (249, 246, 238, 1);
 }
 
-.card {
-  margin: 2rem;
- 
-}
-
-.Cointainer {
-  display: grid;  
+.Container-home {
+  display: grid;
   grid-template-columns: repeat(3, 1fr);
   justify-content: center;
   align-content: center;
-  gap: 20px;
-
+  position: relative;
+  margin-left: 2rem;
+  margin-right: 2rem;
+  padding-top: 2rem;
+  
   @media (max-width: 375px) {
     grid-template-columns: 1fr; 
+    justify-content: center;
+    align-content: center;
   }
   @media (max-width: 720px) {
     grid-template-columns: 1fr; 
+    justify-content: center;
+    align-content: center;
   }
+
 }
+
 
 .Container {
   display: inline-flex;
@@ -243,10 +322,74 @@ nav h3 {
 .Container-details {
   display: flex;
   justify-content: center;
-  flex-direction: column;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  padding-left: 8rem;
+  padding-right: 8rem;
   align-items: center;
   justify-content: center;
   height: 100%;
+  position: relative;
+  align-content: center;
+
+  @media screen and (max-width: 720px) {
+    justify-content: center;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+}
+}
+
+.img-details{
+  width: 50vw;
+  height: auto;
+  justify-content: center;
+  align-items: center;
+
+  @media screen and (max-width: 720px) {
+    width: 100vw;
+    height: auto;
+    justify-content: center;
+    align-items: center;
+}
+}
+
+.h2-details {
+  font-size: x-large;
+  font-weight: 800;
+  align-items: center;
+  justify-content: center;
+  align-self: center;
+  padding-top: 5rem;
+
+  @media screen and (max-width: 720px) {
+    font-size: x-large;
+    font-weight: 800;
+    align-items: center;
+    justify-content: center;
+    align-self: center;
+    padding-top: 1rem;
+}
+}
+
+.card-body-details{
+  align-self: center;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+  padding-top: 3rem;
+  width: 80%;
+
+  @media screen and (max-width: 720px) {
+    align-self: center;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    padding-top: 1rem;
+    width: 100%;
+  
+}
 }
 
 .random-section {

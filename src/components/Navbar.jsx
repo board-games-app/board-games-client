@@ -1,10 +1,12 @@
 import { Link } from "react-router-dom";
 import homeImg from "../assets/noun-home-1144.png"
+import icon_dice from "../assets/icon_dice.png"
+import icon_question from "../assets/question-mark.png"
+import icon_add from "../assets/noun-add.png"
 
 function Navbar() {
   return (
-    <nav >
-    <div className ="flex flex-wrap items-center justify-between mx-auto p-4 m-0 bg-gray-800 ms-0">
+    <nav className="Navbar">
           <Link to="/">
             <img className="img_navbar"
               src={homeImg}
@@ -12,22 +14,31 @@ function Navbar() {
             />
           </Link>
 
-          <div className="hidden w-full md:block md:w-auto" id="navbar-solid-bg">
-          <ul className="flex flex-col font-medium mt-4 rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-transparent dark:bg-gray-800 md:dark:bg-transparent dark:border-gray-700">
-              <Link to="dice">
-                <h3 className="text-slate-50">Throw the dice!</h3>
-              </Link>
+          <div className="menu-navbar">
+            <ul>
+              <li className="lines-navbar">
+                <Link to="dice">
+                  <img src={icon_dice} alt="icon-dice" className="iconDice"/>
+                  <h3 className="text-slate-50">Throw the dice!</h3>
+                </Link>
+                </li>
 
-              <Link to="/add-game">
-                <h3 className="text-slate-50" >Add a Game</h3>
-              </Link>
+                <li className="lines-navbar"> 
+                <Link to="/add-game">
+                  <img src={icon_add} alt="icon-add" className="iconAdd"/> 
+                  <h3 className="text-slate-50" >Add </h3>
+                </Link>
+                </li>
 
-              <Link to="/test-yourself">
-                <h3 className="text-slate-50">Can't decide?</h3>
-              </Link>
-            </ul>
+                <li className="lines-navbar">
+                <Link to="/test-yourself">
+                  <img src={icon_question} alt="icon-question" className="iconQuestion"/> 
+                  <h3 className="text-slate-50">Can't decide?</h3>
+                </Link>
+                </li>
+              </ul>
           </div>
-      </div>
+      
       </nav>
   );
 }
