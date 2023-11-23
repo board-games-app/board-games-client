@@ -46,14 +46,9 @@ function Strategy() {
               <div className="card-body items-center text-center">
                 <h3 className="card-title">{game.name}</h3>
                 <img className="rounded-xl" src={game.image} alt="" />
-                <p>Type of game:
-                <div>
-                  {separateCategories(game.type_of_Game).map((category, index) => (
-                    <span key={index}>{category}</span>
-                  ))}
-                </div>
-                </p>
-                <p>Year created: {game.year}</p>
+                <h3 className="card-body ">
+                        Number of Players: {game.number_of_players}
+                      </h3>
               </div>
             </Link>
           ))}
